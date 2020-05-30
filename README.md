@@ -1,2 +1,2 @@
-# campeonatoFutebol
-Projeto Trabalho Prático de Back-end
+# Campeonato Futebol
+Projeto: Trabalho Prático de Back-end
