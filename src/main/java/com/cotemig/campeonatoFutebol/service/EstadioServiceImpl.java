@@ -28,6 +28,11 @@ public class EstadioServiceImpl implements EstadioService {
 	}
 
 	@Override
+	public List<Estadio> getAllEstadiosByCidade(Integer idCidade) {
+		return estadioRepository.getAllEstadiosByCidade(idCidade);
+	}
+
+	@Override
 	public List<Estadio> getAllEstadios() {
 		return estadioRepository.findAll();
 	}

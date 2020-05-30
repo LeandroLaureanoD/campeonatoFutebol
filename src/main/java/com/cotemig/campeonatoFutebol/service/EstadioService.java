@@ -15,6 +15,8 @@ import com.cotemig.campeonatoFutebol.model.Estadio;
 public interface EstadioService {
 	Optional<Estadio> getEstadioById(Integer id);
 
+	List<Estadio> getAllEstadiosByCidade(Integer idCidade);
+
 	List<Estadio> getAllEstadios();
 
 	void insertEstadio(Estadio estadio);

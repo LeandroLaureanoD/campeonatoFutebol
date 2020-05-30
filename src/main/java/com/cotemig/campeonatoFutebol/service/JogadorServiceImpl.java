@@ -47,4 +47,22 @@ public class JogadorServiceImpl implements JogadorService {
 		jogadorRepository.save(jogador);
 	}
 
+	@Override
+	public void updateJogador(Jogador jogador) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAllJogador() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateJogadorById(Integer id, Jogador jogador) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
