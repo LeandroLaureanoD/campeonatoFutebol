@@ -25,6 +25,8 @@ public class Equipe {
 
 	private String nome;
 
+	
+	
 	@OneToMany(mappedBy = "equipe")
 	private Set<Jogador> jogadores;
 

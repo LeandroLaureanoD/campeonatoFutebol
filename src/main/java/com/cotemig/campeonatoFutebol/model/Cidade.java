@@ -27,6 +27,10 @@ public class Cidade {
 	
 	private String sigla;
 	
+	
+	
+	
+	
 	@ManyToOne
 	@JoinColumn(name = "estado_id", nullable = false)
 	private Estado estado;

@@ -17,7 +17,7 @@ import com.cotemig.campeonatoFutebol.model.Jogador;
  */
 @Repository("jogadorRepository")
 public interface JogadorRepository extends JpaRepository<Jogador, Integer> {
-	
+
 	@Query(value = "SELECT * FROM JOGADOR WHERE equipe_id = ?1", nativeQuery = true)
 	List<Jogador> getAllJogadoresByEquipe(Integer idEquipe);
 

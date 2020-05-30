@@ -28,6 +28,11 @@ public class CidadeServiceImpl implements CidadeService {
 	}
 
 	@Override
+	public List<Cidade> getAllCidadesByEstado(Integer idEstado) {
+		return cidadeRepository.getAllCidadesByEstado(idEstado);
+	}
+
+	@Override
 	public List<Cidade> getAllCidades() {
 		return cidadeRepository.findAll();
 	}

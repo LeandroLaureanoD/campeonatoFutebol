@@ -15,6 +15,8 @@ import com.cotemig.campeonatoFutebol.model.Cidade;
 public interface CidadeService {
 	Optional<Cidade> getCidadeById(Integer id);
 
+	List<Cidade> getAllCidadesByEstado(Integer idEstado);
+
 	List<Cidade> getAllCidades();
 
 	void insertCidade(Cidade cidade);
