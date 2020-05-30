@@ -22,4 +22,8 @@ public interface JogadorService {
 	List<Jogador> getAllJogadores();
 
 	void insertJogador(Jogador jogador);
+	void updateJogador(Jogador jogador);
+	void deleteAllJogador();
+	void updateJogadorById(Integer id, Jogador jogador);
+	
 }
