@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 /**
- * @author Jose Eustaquio Muniz
+ * @author equipe devs
  *
  */
 @EnableWebSecurity
@@ -31,7 +31,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("gerente_master").password("98759").roles("ADMIN");
+		auth.inMemoryAuthentication().withUser("gerente_master").password("98759a*B").roles("ADMIN");
 	}
 
 	@Bean

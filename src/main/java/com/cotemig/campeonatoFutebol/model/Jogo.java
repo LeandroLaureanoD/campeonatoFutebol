@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
- * @author Jose Eustaquio Muniz
+ * @author equipe devs
  *
  */
 @Entity

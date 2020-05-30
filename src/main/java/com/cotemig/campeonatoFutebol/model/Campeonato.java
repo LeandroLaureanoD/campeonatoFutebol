@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * @author Jose Eustaquio Muniz
+ * @author equipe devs
  *
  */
 @Entity

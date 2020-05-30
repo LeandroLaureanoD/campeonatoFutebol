@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
- * @author Jose Eustaquio Muniz
+ * @author equipe devs
  *
  */
 @Entity
