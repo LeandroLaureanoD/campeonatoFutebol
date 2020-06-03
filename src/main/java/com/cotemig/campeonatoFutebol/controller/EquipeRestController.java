@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cotemig.campeonatoFutebol.model.Jogador;
 import com.cotemig.campeonatoFutebol.model.Equipe;
-import com.cotemig.campeonatoFutebol.service.JogadorService;
+import com.cotemig.campeonatoFutebol.model.Jogador;
 import com.cotemig.campeonatoFutebol.service.EquipeService;
+import com.cotemig.campeonatoFutebol.service.JogadorService;
 
 /**
  * @author equipe devs
@@ -50,5 +50,5 @@ public class EquipeRestController {
 	public void insertEquipe(@RequestBody Equipe equipe) {
 		equipeService.insertEquipe(equipe);
 	}
-	
+
 }
