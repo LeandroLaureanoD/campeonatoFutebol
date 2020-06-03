@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cotemig.campeonatoFutebol.model.Campeonato;
+import com.cotemig.campeonatoFutebol.model.Jogo;
 import com.cotemig.campeonatoFutebol.service.CampeonatoService;
+import com.cotemig.campeonatoFutebol.service.JogoService;
 
 /**
  * @author equipe devs
@@ -24,9 +26,12 @@ import com.cotemig.campeonatoFutebol.service.CampeonatoService;
 public class CampeonatoRestController {
 
 	@Autowired
+	private JogoService jogoService;
+
+	@Autowired
 	private CampeonatoService campeonatoService;
 
-	/* 3 métodos básicos implementados */
+	/* 4 métodos básicos implementados */
 	@RequestMapping(value = "campeonato/rest/get/{id}", method = RequestMethod.GET)
 	public Optional<Campeonato> getCampeonato(@PathVariable("id") Integer id) {
 		return campeonatoService.getCampeonatoById(id);
@@ -40,6 +45,11 @@ public class CampeonatoRestController {
 	@RequestMapping(value = "campeonato/rest/insert", method = RequestMethod.POST)
 	public void insertCampeonato(@RequestBody Campeonato campeonato) {
 		campeonatoService.insertCampeonato(campeonato);
+	}
+
+	@RequestMapping(value = "campeonato/rest/getAllJogos/{idCampeonato}", method = RequestMethod.GET)
+	public List<Jogo> getAllJogosByCampeonato(@PathVariable("idCampeonato") Integer idCampeonato) {
+		return jogoService.getAllJogosByCampeonato(idCampeonato);
 	}
 
 }

@@ -42,4 +42,9 @@ public class JogoServiceImpl implements JogoService {
 		jogoRepository.save(jogo);
 	}
 
+	@Override
+	public List<Jogo> getAllJogosByCampeonato(Integer idCampeonato) {
+		return jogoRepository.getAllJogosByCampeonato(idCampeonato);
+	}
+
 }

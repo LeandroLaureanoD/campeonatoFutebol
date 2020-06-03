@@ -21,4 +21,6 @@ public interface JogoService {
 
 	void insertJogo(Jogo jogo);
 
+	List<Jogo> getAllJogosByCampeonato(Integer idCampeonato);
+
 }

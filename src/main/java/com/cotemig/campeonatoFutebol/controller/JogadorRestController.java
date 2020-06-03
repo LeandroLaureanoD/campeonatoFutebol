@@ -22,6 +22,7 @@ import com.cotemig.campeonatoFutebol.service.JogadorService;
  */
 @RestController
 public class JogadorRestController {
+
 	@Autowired
 	private JogadorService jogadorService;
 

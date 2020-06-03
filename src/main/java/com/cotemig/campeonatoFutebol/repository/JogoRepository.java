@@ -21,4 +21,7 @@ public interface JogoRepository extends JpaRepository<Jogo, Integer> {
 	@Query(value = "SELECT * FROM JOGO WHERE estadio_id = ?1", nativeQuery = true)
 	List<Jogo> getAllJogosByEstadio(Integer idEstadio);
 
+	@Query(value = "SELECT * FROM JOGO WHERE campeonato_id = ?1", nativeQuery = true)
+	List<Jogo> getAllJogosByCampeonato(Integer idCampeonato);
+
 }
