@@ -28,6 +28,11 @@ public class JogoServiceImpl implements JogoService {
 	}
 
 	@Override
+	public List<Jogo> getAllJogosByEstadio(Integer idEstadio) {
+		return jogoRepository.getAllJogosByEstadio(idEstadio);
+	}
+
+	@Override
 	public List<Jogo> getAllJogos() {
 		return jogoRepository.findAll();
 	}

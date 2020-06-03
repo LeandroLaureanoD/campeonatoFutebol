@@ -31,11 +31,7 @@ public class EquipeRestController {
 	@Autowired
 	private EquipeService equipeService;
 
-	@RequestMapping(value = "equipe/rest/getAllJogadores/{idEquipe}", method = RequestMethod.GET)
-	public List<Jogador> getAllJogadoresByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
-		return jogadorService.getAllJogadoresByEquipe(idEquipe);
-	}
-
+	/* 4 métodos básicos implementados */
 	@RequestMapping(value = "equipe/rest/get/{id}", method = RequestMethod.GET)
 	public Optional<Equipe> getEquipe(@PathVariable("id") Integer id) {
 		return equipeService.getEquipeById(id);
@@ -49,6 +45,11 @@ public class EquipeRestController {
 	@RequestMapping(value = "equipe/rest/insert", method = RequestMethod.POST)
 	public void insertEquipe(@RequestBody Equipe equipe) {
 		equipeService.insertEquipe(equipe);
+	}
+
+	@RequestMapping(value = "equipe/rest/getAllJogadores/{idEquipe}", method = RequestMethod.GET)
+	public List<Jogador> getAllJogadoresByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
+		return jogadorService.getAllJogadoresByEquipe(idEquipe);
 	}
 
 }

@@ -14,8 +14,11 @@ import com.cotemig.campeonatoFutebol.model.Jogo;
  */
 public interface JogoService {
 	Optional<Jogo> getJogoById(Integer id);
+	
+	List<Jogo> getAllJogosByEstadio(Integer idEstadio);
 
 	List<Jogo> getAllJogos();
 
 	void insertJogo(Jogo jogo);
+
 }

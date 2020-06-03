@@ -30,11 +30,6 @@ public class JogadorRestController {
 		return jogadorService.getJogadorById(id);
 	}
 
-	@RequestMapping(value = "jogador/rest/getByAge/{age}", method = RequestMethod.GET)
-	public List<Jogador> getAllJogadoresByAge(@PathVariable("age") Integer age) {
-		return jogadorService.getAllJogadoresByAge(age);
-	}
-
 	@RequestMapping(value = "jogador/rest/getAll", method = RequestMethod.GET)
 	public List<Jogador> getJogadores() {
 		return jogadorService.getAllJogadores();
@@ -43,6 +38,11 @@ public class JogadorRestController {
 	@RequestMapping(value = "jogador/rest/insert", method = RequestMethod.POST)
 	public void insertJogador(@RequestBody Jogador jogador) {
 		jogadorService.insertJogador(jogador);
+	}
+
+	@RequestMapping(value = "jogador/rest/getByAge/{age}", method = RequestMethod.GET)
+	public List<Jogador> getAllJogadoresByAge(@PathVariable("age") Integer age) {
+		return jogadorService.getAllJogadoresByAge(age);
 	}
 
 }
