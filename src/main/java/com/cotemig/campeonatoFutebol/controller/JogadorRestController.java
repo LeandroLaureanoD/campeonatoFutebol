@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.cotemig.campeonatoFutebol.model.Jogador;
 import com.cotemig.campeonatoFutebol.service.JogadorService;
 
@@ -45,5 +44,20 @@ public class JogadorRestController {
 	public List<Jogador> getAllJogadoresByAge(@PathVariable("age") Integer age) {
 		return jogadorService.getAllJogadoresByAge(age);
 	}
+	
+	 @RequestMapping(value = "/rest/deleteAll", method = RequestMethod.DELETE)
+	 public void deleteJogador() {
+		 jogadorService.deleteAllJogador();
+	 }
+	    
+	 @RequestMapping(value = "/rest/delete/{id}", method = RequestMethod.DELETE)
+	 public void deleteJogador(@PathVariable("id") Integer id) {
+		 jogadorService.getJogadorById(id);
+	 }
+	    
+	 @RequestMapping(value = "/rest/update/{id}", method = RequestMethod.POST)
+	 public void updateJogador(@RequestBody Jogador jogador, @PathVariable("id") Integer id) {
+		 jogadorService.updateJogadorById(id, jogador);
+	 }
 
 }
