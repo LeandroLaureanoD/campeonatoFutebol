@@ -65,4 +65,16 @@ public class JogadorServiceImpl implements JogadorService {
 		
 	}
 
+	@Override
+	public void deleteAllJogadorById(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteJogadorById(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

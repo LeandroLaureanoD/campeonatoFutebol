@@ -13,9 +13,12 @@ import com.cotemig.campeonatoFutebol.model.Campeonato;
  *
  */
 public interface CampeonatoService {
+
 	Optional<Campeonato> getCampeonatoById(Integer id);
-
-	List<Campeonato> getAllCampeonatos();
-
-	void insertCampeonato(Campeonato campeonato);
+	 List<Campeonato> getAllCampeonatos();
+	 void deleteAllCampeonatos();
+	 void deleteCampeonatoById(Integer id);
+	 void updateCampeonato(Campeonato campeonato);
+	 void insertCampeonato(Campeonato campeonato);
+	 void updateCampeonatoById(Integer id, Campeonato campeonato);
 }

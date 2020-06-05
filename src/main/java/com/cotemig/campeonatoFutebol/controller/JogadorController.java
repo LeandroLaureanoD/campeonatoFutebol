@@ -81,7 +81,7 @@ public class JogadorController {
 	            return "error";
 	        }
 	 
-	 jogadorService.getJogadorById(jogador.getId());
+	 jogadorService.deleteJogadorById(jogador.getId());
 	        
 	        return "redirect:jogador/all";
 	 }

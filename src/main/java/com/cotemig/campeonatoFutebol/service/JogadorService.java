@@ -25,8 +25,11 @@ public interface JogadorService {
 
 	void updateJogador(Jogador jogador);
 
+	void deleteAllJogadorById(Integer id);
+	void deleteJogadorById(Integer id);
 	void deleteAllJogador();
 
 	void updateJogadorById(Integer id, Jogador jogador);
+	
 
 }

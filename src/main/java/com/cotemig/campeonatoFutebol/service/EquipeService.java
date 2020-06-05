@@ -13,9 +13,13 @@ import com.cotemig.campeonatoFutebol.model.Equipe;
  *
  */
 public interface EquipeService {
+	
 	Optional<Equipe> getEquipeById(Integer id);
-
-	List<Equipe> getAllEquipes();
-
-	void insertEquipe(Equipe equipe);
+	 List<Equipe> getAllEquipe();
+	 List<Equipe> getAllEquipes();
+	 void deleteAllEquipe();
+	 void deleteEquipeById(Integer id);
+	 void updateEquipeById(Integer id);
+	 void insertEquipe(Equipe equipe);
+	 void updateEquipeById(Integer id, Equipe equipe);
 }
