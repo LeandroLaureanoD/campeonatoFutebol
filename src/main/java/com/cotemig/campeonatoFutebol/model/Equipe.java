@@ -31,7 +31,7 @@ public class Equipe {
 	private Set<Jogador> jogadores;
 
 	@ManyToOne
-	@JoinColumn(name = "classificacao_id", nullable = false) /* isso não está claro */
+	@JoinColumn(name = "classificacao_id", nullable = false)
 	private Classificacao classificacao;
 
 	public void AdicionarEquipe() {
