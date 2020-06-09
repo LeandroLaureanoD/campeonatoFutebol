@@ -37,4 +37,9 @@ public class ClassificacaoServiceImpl implements ClassificacaoService {
 		classificacaoRepository.save(classificacao);
 	}
 
+	@Override
+	public Optional<Classificacao> getClassificacaoByEquipe(Integer idEquipe) {
+		return classificacaoRepository.getClassificacaoByEquipe(idEquipe);
+	}
+
 }

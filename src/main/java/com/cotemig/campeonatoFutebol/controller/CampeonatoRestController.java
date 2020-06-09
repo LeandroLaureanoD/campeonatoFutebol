@@ -36,7 +36,6 @@ public class CampeonatoRestController {
 	@Autowired
 	private CampeonatoService campeonatoService;
 
-	/* 4 métodos básicos implementados */
 	@RequestMapping(value = "campeonato/rest/get/{id}", method = RequestMethod.GET)
 	public Optional<Campeonato> getCampeonato(@PathVariable("id") Integer id) {
 		return campeonatoService.getCampeonatoById(id);

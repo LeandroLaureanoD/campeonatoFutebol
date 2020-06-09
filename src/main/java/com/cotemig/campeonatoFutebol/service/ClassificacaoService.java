@@ -18,4 +18,6 @@ public interface ClassificacaoService {
 	List<Classificacao> getAllClassificacoes();
 
 	void insertClassificacao(Classificacao classificacao);
+
+	Optional<Classificacao> getClassificacaoByEquipe(Integer idEquipe);
 }

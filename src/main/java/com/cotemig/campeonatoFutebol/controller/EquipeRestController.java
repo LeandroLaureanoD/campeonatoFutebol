@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cotemig.campeonatoFutebol.model.Classificacao;
 import com.cotemig.campeonatoFutebol.model.Equipe;
 import com.cotemig.campeonatoFutebol.model.Jogador;
+import com.cotemig.campeonatoFutebol.service.ClassificacaoService;
 import com.cotemig.campeonatoFutebol.service.EquipeService;
 import com.cotemig.campeonatoFutebol.service.JogadorService;
 
@@ -27,11 +29,13 @@ public class EquipeRestController {
 
 	@Autowired
 	private JogadorService jogadorService;
+	
+	@Autowired
+	private ClassificacaoService classificacaoService;
 
 	@Autowired
 	private EquipeService equipeService;
 
-	/* 4 métodos básicos implementados */
 	@RequestMapping(value = "equipe/rest/get/{id}", method = RequestMethod.GET)
 	public Optional<Equipe> getEquipe(@PathVariable("id") Integer id) {
 		return equipeService.getEquipeById(id);
@@ -50,6 +54,11 @@ public class EquipeRestController {
 	@RequestMapping(value = "equipe/rest/getAllJogadores/{idEquipe}", method = RequestMethod.GET)
 	public List<Jogador> getAllJogadoresByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
 		return jogadorService.getAllJogadoresByEquipe(idEquipe);
+	}
+	
+	@RequestMapping(value = "equipe/rest/getClassificacao/{idEquipe}", method = RequestMethod.GET)
+	public Optional<Classificacao> getClassificacaoByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
+		return classificacaoService.getClassificacaoByEquipe(idEquipe);
 	}
 
 }
