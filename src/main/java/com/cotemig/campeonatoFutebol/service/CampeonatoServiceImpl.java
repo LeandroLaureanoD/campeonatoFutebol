@@ -40,25 +40,25 @@ public class CampeonatoServiceImpl implements CampeonatoService {
 	@Override
 	public void deleteAllCampeonatos() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteCampeonatoById(Integer id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void updateCampeonato(Campeonato campeonato) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void updateCampeonatoById(Integer id, Campeonato campeonato) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
