@@ -41,8 +41,23 @@ public class Security extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/atleta/rest/getAll");
-		web.ignoring().antMatchers("/time/rest/getAll");
+//		web.ignoring().antMatchers("/atleta/rest/getAll");
+//		web.ignoring().antMatchers("/time/rest/getAll");
+
+		web.ignoring().antMatchers("/campeonato/rest/getAll");
+		web.ignoring().antMatchers("/cidade/rest/getAll");
+		web.ignoring().antMatchers("/classificacao/rest/getAll");
+
+		web.ignoring().antMatchers("/equipe/rest/getAll");
+		web.ignoring().antMatchers("/estadio/rest/getAll");
+		web.ignoring().antMatchers("/estado/rest/getAll");
+
+		web.ignoring().antMatchers("/jogador/rest/getAll");
+		web.ignoring().antMatchers("/jogo/rest/getAll");
+		web.ignoring().antMatchers("/resultado/rest/getAll");
+		
+		web.ignoring().antMatchers("/cidade/rest/insert");
+		web.ignoring().antMatchers("/estado/rest/insert");
 	}
 
 }
