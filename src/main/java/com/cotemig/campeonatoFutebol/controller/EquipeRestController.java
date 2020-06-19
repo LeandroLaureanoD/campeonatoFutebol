@@ -37,7 +37,7 @@ public class EquipeRestController {
 	@Autowired
 	private EquipeService equipeService;
 
-	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Equipe> getEquipe(@PathVariable("id") Integer id) {
 		return equipeService.getEquipeById(id);
 	}

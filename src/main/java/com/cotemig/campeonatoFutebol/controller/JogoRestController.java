@@ -21,22 +21,23 @@ import com.cotemig.campeonatoFutebol.service.JogoService;
  *
  */
 @RestController
+@RequestMapping("/jogo/rest")
 public class JogoRestController {
 
 	@Autowired
 	private JogoService jogoService;
 
-	@RequestMapping(value = "jogo/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Jogo> getJogo(@PathVariable("id") Integer id) {
 		return jogoService.getJogoById(id);
 	}
 
-	@RequestMapping(value = "jogo/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Jogo> getJogos() {
 		return jogoService.getAllJogos();
 	}
 
-	@RequestMapping(value = "jogo/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertJogo(@RequestBody Jogo jogo) {
 		jogoService.insertJogo(jogo);
 	}

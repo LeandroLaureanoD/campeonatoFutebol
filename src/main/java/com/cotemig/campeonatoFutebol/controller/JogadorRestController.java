@@ -20,42 +20,43 @@ import com.cotemig.campeonatoFutebol.service.JogadorService;
  *
  */
 @RestController
+@RequestMapping("/jogador/rest")
 public class JogadorRestController {
 
 	@Autowired
 	private JogadorService jogadorService;
 
-	@RequestMapping(value = "jogador/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Jogador> getJogador(@PathVariable("id") Integer id) {
 		return jogadorService.getJogadorById(id);
 	}
 
-	@RequestMapping(value = "jogador/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Jogador> getJogadores() {
 		return jogadorService.getAllJogadores();
 	}
 
-	@RequestMapping(value = "jogador/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertJogador(@RequestBody Jogador jogador) {
 		jogadorService.insertJogador(jogador);
 	}
 
-	@RequestMapping(value = "jogador/rest/getByAge/{age}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{idJogador}/getByAge/{age}", method = RequestMethod.GET)
 	public List<Jogador> getAllJogadoresByAge(@PathVariable("age") Integer age) {
 		return jogadorService.getAllJogadoresByAge(age);
 	}
 
-	@RequestMapping(value = "/rest/deleteAll", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
 	public void deleteJogador() {
 		jogadorService.deleteAllJogador();
 	}
 
-	@RequestMapping(value = "/rest/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}/delete", method = RequestMethod.DELETE)
 	public void deleteJogador(@PathVariable("id") Integer id) {
-		jogadorService.getJogadorById(id);
+		jogadorService.deleteJogadorById(id);
 	}
 
-	@RequestMapping(value = "/rest/update/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
 	public void updateJogador(@RequestBody Jogador jogador, @PathVariable("id") Integer id) {
 		jogadorService.updateJogadorById(id, jogador);
 	}

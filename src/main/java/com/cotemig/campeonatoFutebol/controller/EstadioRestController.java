@@ -23,6 +23,7 @@ import com.cotemig.campeonatoFutebol.service.JogoService;
  *
  */
 @RestController
+@RequestMapping("/estadio/rest")
 public class EstadioRestController {
 
 	@Autowired
@@ -31,23 +32,22 @@ public class EstadioRestController {
 	@Autowired
 	private EstadioService estadioService;
 
-	/* 4 métodos básicos implementados */
-	@RequestMapping(value = "estadio/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Estadio> getEstadio(@PathVariable("id") Integer id) {
 		return estadioService.getEstadioById(id);
 	}
 
-	@RequestMapping(value = "estadio/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Estadio> getEstadios() {
 		return estadioService.getAllEstadios();
 	}
 
-	@RequestMapping(value = "estadio/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertEstadio(@RequestBody Estadio estadio) {
 		estadioService.insertEstadio(estadio);
 	}
 
-	@RequestMapping(value = "estadio/rest/getAllJogos/{idEstadio}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{idEstadio}/getAllJogos", method = RequestMethod.GET)
 	public List<Jogo> getAllJogosByEstadio(@PathVariable("idEstadio") Integer idEstadio) {
 		return jogoService.getAllJogosByEstadio(idEstadio);
 	}

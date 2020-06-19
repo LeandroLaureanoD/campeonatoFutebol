@@ -21,22 +21,23 @@ import com.cotemig.campeonatoFutebol.service.ClassificacaoService;
  *
  */
 @RestController
+@RequestMapping("/classificacao/rest")
 public class ClassificacaoRestController {
 
 	@Autowired
 	private ClassificacaoService classificacaoService;
 
-	@RequestMapping(value = "classificacao/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Classificacao> getClassificacao(@PathVariable("id") Integer id) {
 		return classificacaoService.getClassificacaoById(id);
 	}
 
-	@RequestMapping(value = "classificacao/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Classificacao> getClassificacoes() {
 		return classificacaoService.getAllClassificacoes();
 	}
 
-	@RequestMapping(value = "classificacao/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertClassificacao(@RequestBody Classificacao classificacao) {
 		classificacaoService.insertClassificacao(classificacao);
 	}

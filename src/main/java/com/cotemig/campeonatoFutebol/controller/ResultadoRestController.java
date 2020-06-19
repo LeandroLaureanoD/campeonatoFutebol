@@ -21,22 +21,23 @@ import com.cotemig.campeonatoFutebol.service.ResultadoService;
  *
  */
 @RestController
+@RequestMapping("/resultado/rest")
 public class ResultadoRestController {
 
 	@Autowired
 	private ResultadoService resultadoService;
 
-	@RequestMapping(value = "resultado/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Resultado> getResultado(@PathVariable("id") Integer id) {
 		return resultadoService.getResultadoById(id);
 	}
 
-	@RequestMapping(value = "resultado/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Resultado> getResultados() {
 		return resultadoService.getAllResultados();
 	}
 
-	@RequestMapping(value = "resultado/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertResultado(@RequestBody Resultado resultado) {
 		resultadoService.insertResultado(resultado);
 	}

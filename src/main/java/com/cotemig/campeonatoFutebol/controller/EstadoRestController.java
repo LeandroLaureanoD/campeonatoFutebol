@@ -32,7 +32,7 @@ public class EstadoRestController {
 	@Autowired
 	private EstadoService estadoService;
 
-	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Estado> getEstado(@PathVariable("id") Integer id) {
 		return estadoService.getEstadoById(id);
 	}

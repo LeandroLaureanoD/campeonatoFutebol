@@ -32,7 +32,7 @@ public class CidadeRestController {
 	@Autowired
 	private CidadeService cidadeService;
 
-	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
 	public Optional<Cidade> getCidade(@PathVariable("id") Integer id) {
 		return cidadeService.getCidadeById(id);
 	}
