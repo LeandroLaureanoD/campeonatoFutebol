@@ -25,38 +25,39 @@ import com.cotemig.campeonatoFutebol.service.JogadorService;
  *
  */
 @RestController
+@RequestMapping("/equipe/rest")
 public class EquipeRestController {
 
 	@Autowired
 	private JogadorService jogadorService;
-	
+
 	@Autowired
 	private ClassificacaoService classificacaoService;
 
 	@Autowired
 	private EquipeService equipeService;
 
-	@RequestMapping(value = "equipe/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
 	public Optional<Equipe> getEquipe(@PathVariable("id") Integer id) {
 		return equipeService.getEquipeById(id);
 	}
 
-	@RequestMapping(value = "equipe/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Equipe> getEquipes() {
 		return equipeService.getAllEquipes();
 	}
 
-	@RequestMapping(value = "equipe/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertEquipe(@RequestBody Equipe equipe) {
 		equipeService.insertEquipe(equipe);
 	}
 
-	@RequestMapping(value = "equipe/rest/getAllJogadores/{idEquipe}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{idEquipe}/getAllJogadores", method = RequestMethod.GET)
 	public List<Jogador> getAllJogadoresByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
 		return jogadorService.getAllJogadoresByEquipe(idEquipe);
 	}
-	
-	@RequestMapping(value = "equipe/rest/getClassificacao/{idEquipe}", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/{idEquipe}/getClassificacoes", method = RequestMethod.GET)
 	public Optional<Classificacao> getClassificacaoByEquipe(@PathVariable("idEquipe") Integer idEquipe) {
 		return classificacaoService.getClassificacaoByEquipe(idEquipe);
 	}

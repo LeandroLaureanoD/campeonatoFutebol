@@ -25,38 +25,39 @@ import com.cotemig.campeonatoFutebol.service.JogoService;
  *
  */
 @RestController
+@RequestMapping("/campeonato/rest")
 public class CampeonatoRestController {
 
 	@Autowired
 	private JogoService jogoService;
-	
+
 	@Autowired
 	private EquipeService equipeService;
 
 	@Autowired
 	private CampeonatoService campeonatoService;
 
-	@RequestMapping(value = "campeonato/rest/get/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
 	public Optional<Campeonato> getCampeonato(@PathVariable("id") Integer id) {
 		return campeonatoService.getCampeonatoById(id);
 	}
 
-	@RequestMapping(value = "campeonato/rest/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Campeonato> getCampeonatos() {
 		return campeonatoService.getAllCampeonatos();
 	}
 
-	@RequestMapping(value = "campeonato/rest/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public void insertCampeonato(@RequestBody Campeonato campeonato) {
 		campeonatoService.insertCampeonato(campeonato);
 	}
 
-	@RequestMapping(value = "campeonato/rest/getAllJogos/{idCampeonato}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{idCampeonato}/getAllJogos", method = RequestMethod.GET)
 	public List<Jogo> getAllJogosByCampeonato(@PathVariable("idCampeonato") Integer idCampeonato) {
 		return jogoService.getAllJogosByCampeonato(idCampeonato);
 	}
 
-	@RequestMapping(value = "campeonato/rest/getAllEquipes/{idCampeonato}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{idCampeonato}/getAllEquipes", method = RequestMethod.GET)
 	public List<Equipe> getAllEquipesByCampeonato(@PathVariable("idCampeonato") Integer idCampeonato) {
 		return equipeService.getAllEquipesByCampeonato(idCampeonato);
 	}
