@@ -7,7 +7,6 @@
 <div align="center">
 
 [![Build Status](https://travis-ci.org/jemsantos/campeonatoFutebol.svg?branch=master)](https://travis-ci.org/jemsantos/campeonatoFutebol)
-
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
