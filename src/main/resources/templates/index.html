@@ -1,6 +1,6 @@
 <html>
  <head>
- <title>Sistema Academico</title>
+ <title>Campeonato Futebol</title>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <style>
  table, th, td {
@@ -11,44 +11,44 @@
  </head>
  <body>
  
- <a href="/faculdade/insert">Inserir nova Faculdade</a> | <a href="faculdade/read">Ver todas as Faculdades</a>
+ <a href="equipe/insert">Inserir novo Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
  <br> <br>
  
  <table style="width:100%">
  <tr>
      <th>ID</td>
      <th>Nome</td>
-     <th>CNPJ</td>
+     <th>...</td>
      <th>Excluir?</td>
      <th>Alterar?</td>
  </tr>
- <tr th:each="faculdade : ${faculdades}">
-     <td th:text="${faculdade.id}"></td>
-     <td th:text="${faculdade.name}"></td>
-     <td th:text="${faculdade.cnpj}"></td>
-     <td><a th:href="@{/faculdade/delete(id=${faculdade.id})}">Deletar</a></td>
-     <td><a th:href="@{/faculdade/update(id=${faculdade.id})}">Alterar</a></td>
+ <tr th:each="equipe : ${equipes}">
+     <td th:text="${equipe.id}"></td>
+     <td th:text="${equipe.name}"></td>
+     <td th:text="${equipe.name}"></td>
+     <td><a th:href="@{/equipe/delete(id=${equipe.id})}">Deletar</a></td>
+     <td><a th:href="@{/equipe/update(id=${equipe.id})}">Alterar</a></td>
  </tr>
  </table>
 
 <br> <br>
-<a href="/aluno/insert">Inserir novo Aluno</a> | <a href="aluno/read">Ver todos os Alunos</a>
+<a href="jogador/insert">Inserir novo Jogador</a> | <a href="jogador/read">Ver todos os Jogador</a>
 <br> <br>
 
  <table style="width:100%">
  <tr>
      <th>ID</td>
      <th>Nome</td>
-     <th>E-mail</td>
+     <th>...</td>
      <th>Excluir?</td>
      <th>Alterar?</td>
  </tr>
- <tr th:each="aluno : ${alunos}">
-     <td th:text="${aluno.id}"></td>
-     <td th:text="${aluno.name}"></td>
-     <td th:text="${aluno.email}"></td>
-     <td><a th:href="@{/aluno/delete(id=${aluno.id})}">Deletar</a></td>
-     <td><a th:href="@{/aluno/update(id=${aluno.id})}">Alterar</a></td>
+ <tr th:each="jogador : ${jogadores}">
+     <td th:text="${jogador.id}"></td>
+     <td th:text="${jogador.name}"></td>
+     <td th:text="${jogador.name}"></td>
+     <td><a th:href="@{/jogador/delete(id=${jogador.id})}">Deletar</a></td>
+     <td><a th:href="@{/jogador/update(id=${jogador.id})}">Alterar</a></td>
  </tr>
  </table>
  </body>
