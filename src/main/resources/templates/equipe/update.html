@@ -1,0 +1,21 @@
+<html>
+ <head>
+     <title>Atualizar</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ </head>
+ <body>
+ <form action="update" method="POST" modelAttribute="faculdade">
+ 
+ ID:<br>
+   <input type="text" name="id" th:value="${faculdade.id}" readOnly="true"><br>
+   <br>
+   Nome Faculdade:<br>
+   <input type="text" name="name" th:value="${faculdade.name}"><br>
+   <br>
+   CNPJ Faculdade:<br>
+   <input type="text" name="cnpj" th:value="${faculdade.cnpj}"><br>
+   
+   <input type="submit" value="Atualizar">
+ </form>
+ </body>
+</html>
