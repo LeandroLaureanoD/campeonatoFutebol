@@ -1,13 +1,18 @@
 <html>
- <head>
- <title>Ver todos</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- </head>
- <body th:each="aluno : ${alunos}">
- <span th:text="${'ID: ' + aluno.id}"></span><br>
- <span th:text="${'Nome: ' + aluno.name}"></span><br>
- <span th:text="${'Email: ' + aluno.email}"></span><br>
- <br>
- <br>
- </body>
+
+<head>
+    <title>Ver todos Jogadores</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body th:each="jogador : ${jogadores}">
+    <span th:text="${'ID: ' + jogador.id}"></span><br>
+    <span th:text="${'Nome: ' + jogador.nome}"></span><br>
+    <span th:text="${'Idade: ' + jogador.idade}"></span><br>
+    <span th:text="${'Nacionalidade: ' + jogador.nacionalidade}"></span><br>
+    <span th:text="${'Equipe: ' + jogador.equipe}"></span><br>
+    <br>
+    <br>
+</body>
+
 </html>

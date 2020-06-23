@@ -1,55 +1,60 @@
 <html>
- <head>
- <title>Campeonato Futebol</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <style>
- table, th, td {
-   border: 1px solid black;
-   border-collapse: collapse;
- }
- </style>
- </head>
- <body>
- 
- <a href="equipe/insert">Inserir novo Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
- <br> <br>
- 
- <table style="width:100%">
- <tr>
-     <th>ID</td>
-     <th>Nome</td>
-     <th>...</td>
-     <th>Excluir?</td>
-     <th>Alterar?</td>
- </tr>
- <tr th:each="equipe : ${equipes}">
-     <td th:text="${equipe.id}"></td>
-     <td th:text="${equipe.name}"></td>
-     <td th:text="${equipe.name}"></td>
-     <td><a th:href="@{/equipe/delete(id=${equipe.id})}">Deletar</a></td>
-     <td><a th:href="@{/equipe/update(id=${equipe.id})}">Alterar</a></td>
- </tr>
- </table>
 
-<br> <br>
-<a href="jogador/insert">Inserir novo Jogador</a> | <a href="jogador/read">Ver todos os Jogador</a>
-<br> <br>
+<head>
+    <title>Campeonato Futebol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
 
- <table style="width:100%">
- <tr>
-     <th>ID</td>
-     <th>Nome</td>
-     <th>...</td>
-     <th>Excluir?</td>
-     <th>Alterar?</td>
- </tr>
- <tr th:each="jogador : ${jogadores}">
-     <td th:text="${jogador.id}"></td>
-     <td th:text="${jogador.name}"></td>
-     <td th:text="${jogador.name}"></td>
-     <td><a th:href="@{/jogador/delete(id=${jogador.id})}">Deletar</a></td>
-     <td><a th:href="@{/jogador/update(id=${jogador.id})}">Alterar</a></td>
- </tr>
- </table>
- </body>
+<body>
+
+    <a href="equipe/insert">Inserir novo Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
+    <br> <br>
+
+    <table style="width:100%">
+        <tr>
+            <th>ID</td>
+            <th>Nome</td>
+            <th>...</td>
+            <th>Excluir?</td>
+            <th>Alterar?</td>
+        </tr>
+        <tr th:each="equipe : ${equipes}">
+            <td th:text="${equipe.id}"></td>
+            <td th:text="${equipe.name}"></td>
+            <td th:text="${equipe.name}"></td>
+            <td><a th:href="@{/equipe/delete(id=${equipe.id})}">Deletar</a></td>
+            <td><a th:href="@{/equipe/update(id=${equipe.id})}">Alterar</a></td>
+        </tr>
+    </table>
+
+    <br> <br>
+    <a href="jogador/insert">Inserir novo Jogador</a> | <a href="jogador/read">Ver todos os Jogador</a>
+    <br> <br>
+
+    <table style="width:100%">
+        <tr>
+            <th>ID</td>
+            <th>Nome</td>
+            <th>...</td>
+            <th>Excluir?</td>
+            <th>Alterar?</td>
+        </tr>
+        <tr th:each="jogador : ${jogadores}">
+            <td th:text="${jogador.id}"></td>
+            <td th:text="${jogador.name}"></td>
+            <td th:text="${jogador.name}"></td>
+            <td><a th:href="@{/jogador/delete(id=${jogador.id})}">Deletar</a></td>
+            <td><a th:href="@{/jogador/update(id=${jogador.id})}">Alterar</a></td>
+        </tr>
+    </table>
+</body>
+
 </html>
