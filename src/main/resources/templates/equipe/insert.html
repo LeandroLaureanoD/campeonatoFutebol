@@ -1,18 +1,24 @@
 <html>
- <head>
-     <title>Inserir</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- </head>
- <body>
- <form action="insert" method="POST" modelAttribute="faculdade">
- 
-   Nome Faculdade:<br>
-   <input type="text" name="name"><br>
-   <br>
-   CNPJ Faculdade:<br>
-   <input type="text" name="cnpj"><br>
-   
-   <input type="submit" value="Inserir">
- </form>
- </body>
+
+<head>
+  <title>Inserir Equipe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <form action="insert" method="POST" modelAttribute="equipe">
+
+    Nome Equipe:<br>
+    <input type="text" name="nome"><br>
+
+    <br>
+    Jogadores:<br>
+    <select name="jogador_id">
+      <option th:each="f : ${jogadores}" th:value="${f.id}" th:text="${f.nome}"></option>
+    </select>
+
+    <input type="submit" value="Inserir">
+  </form>
+</body>
+
 </html>

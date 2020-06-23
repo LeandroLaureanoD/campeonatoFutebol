@@ -1,13 +1,15 @@
 <html>
- <head>
- <title>Ver todos</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- </head>
- <body th:each="faculdade : ${faculdades}">
- <span th:text="${'ID: ' + faculdade.id}"></span><br>
- <span th:text="${'Nome: ' + faculdade.name}"></span><br>
- <span th:text="${'CNPJ: ' + faculdade.cnpj}"></span><br>
- <br>
- <br>
- </body>
+
+<head>
+    <title>Ver todas Equipes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body th:each="equipe : ${equipes}">
+    <span th:text="${'ID: ' + equipe.id}"></span><br>
+    <span th:text="${'Nome: ' + equipe.nome}"></span><br>
+    <br>
+    <br>
+</body>
+
 </html>

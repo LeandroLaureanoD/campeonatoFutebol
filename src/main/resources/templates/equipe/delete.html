@@ -1,21 +1,21 @@
 <html>
- <head>
-     <title>Deletar</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- </head>
- <body>
- <form action="delete" method="POST" modelAttribute="faculdade">
- 
- ID:<br>
-   <input type="text" name="id" th:value="${faculdade.id}" readOnly="true"><br>
-   <br>
-   Nome Faculdade:<br>
-   <input type="text" name="name" th:value="${faculdade.name}" readOnly="true"><br>
-   <br>
-   CNPJ Faculdade:<br>
-   <input type="text" name="cnpj" th:value="${faculdade.cnpj}" readOnly="true"><br>
-   
-   <input type="submit" value="Deletar">
- </form>
- </body>
+
+<head>
+  <title>Deletar Equipe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <form action="delete" method="POST" modelAttribute="equipe">
+
+    ID:<br>
+    <input type="text" name="id" th:value="${equipe.id}" readOnly="true"><br>
+    <br>
+    Nome Equipe:<br>
+    <input type="text" name="nome" th:value="${equipe.nome}" readOnly="true"><br>
+
+    <input type="submit" value="Deletar">
+  </form>
+</body>
+
 </html>

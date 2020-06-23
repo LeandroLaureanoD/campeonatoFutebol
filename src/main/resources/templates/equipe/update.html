@@ -1,21 +1,28 @@
 <html>
- <head>
-     <title>Atualizar</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- </head>
- <body>
- <form action="update" method="POST" modelAttribute="faculdade">
- 
- ID:<br>
-   <input type="text" name="id" th:value="${faculdade.id}" readOnly="true"><br>
-   <br>
-   Nome Faculdade:<br>
-   <input type="text" name="name" th:value="${faculdade.name}"><br>
-   <br>
-   CNPJ Faculdade:<br>
-   <input type="text" name="cnpj" th:value="${faculdade.cnpj}"><br>
-   
-   <input type="submit" value="Atualizar">
- </form>
- </body>
+
+<head>
+  <title>Atualizar Equipe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <form action="update" method="POST" modelAttribute="equipe">
+
+    ID:<br>
+    <input type="text" name="id" th:value="${equipe.id}" readOnly="true"><br>
+    <br>
+
+    Nome Equipe:<br>
+    <input type="text" name="name" th:value="${equipe.nome}"><br>
+    <br>
+
+    Jogadores:<br>
+    <select name="jogador_id">
+      <option th:each="f : ${jogadores}" th:value="${f.id}" th:text="${f.nome}"></option>
+    </select>
+
+    <input type="submit" value="Atualizar">
+  </form>
+</body>
+
 </html>
