@@ -22,8 +22,9 @@
 
     <select name="equipe_id">
       <option th:each="f : ${equipes}" th:value="${f.id}" th:text="${f.name}"></option>
-    </select>
+    </select><br>
 
+    <br>
     <input type="submit" value="Inserir">
   </form>
 </body>

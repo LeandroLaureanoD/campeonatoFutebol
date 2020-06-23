@@ -15,8 +15,9 @@
     Jogadores:<br>
     <select name="jogador_id">
       <option th:each="f : ${jogadores}" th:value="${f.id}" th:text="${f.nome}"></option>
-    </select>
+    </select><br>
 
+    <br>
     <input type="submit" value="Inserir">
   </form>
 </body>
