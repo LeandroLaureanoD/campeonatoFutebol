@@ -21,4 +21,7 @@ public interface EquipeRepository extends JpaRepository<Equipe, Integer> {
 	@Query(value = "SELECT * FROM EQUIPE WHERE campeonato_id = ?1", nativeQuery = true)
 	List<Equipe> getAllEquipesByCampeonato(Integer idCampeonato);
 
+	@Query(value = "SELECT nome FROM EQUIPE WHERE id = ?1", nativeQuery = true)
+	String getNomeEquipe(Integer id);
+
 }

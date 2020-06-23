@@ -49,32 +49,33 @@ public class JogadorServiceImpl implements JogadorService {
 
 	@Override
 	public void updateJogador(Jogador jogador) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deleteAllJogador() {
-		// TODO Auto-generated method stub
-
+		jogadorRepository.save(jogador);
 	}
 
 	@Override
 	public void updateJogadorById(Integer id, Jogador jogador) {
-		// TODO Auto-generated method stub
+		Optional<Jogador> getJogador = getJogadorById(id);
+		getJogador.get().setNome(jogador.getNome());
+		getJogador.get().setIdade(jogador.getIdade());
+		getJogador.get().setNacionalidade(jogador.getNacionalidade());
+		getJogador.get().setPosicao(jogador.getPosicao());
 
+		jogadorRepository.save(jogador);
+	}
+
+	@Override
+	public void deleteAllJogador() {
+		jogadorRepository.deleteAll();
+	}
+	
+	@Override
+	public void deleteJogadorById(Integer id) {
+		jogadorRepository.deleteById(id);
 	}
 
 	@Override
 	public void deleteAllJogadorById(Integer id) {
 		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deleteJogadorById(Integer id) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

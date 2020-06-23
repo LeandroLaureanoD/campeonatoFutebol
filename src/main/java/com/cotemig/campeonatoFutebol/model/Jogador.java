@@ -27,7 +27,7 @@ public class Jogador {
 	
 	private Integer idade;
 	
-	private String nacionalidade; /* ????? confirmar isto.... */
+	private String nacionalidade;
 	
 	private String posicao;
 	

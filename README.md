@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="115" height="100%" src="https://swellcom.com/content/wp-content/uploads/2017/09/api.png" alt="API RESTful"></a>
+  <img src="https://swellcom.com/content/wp-content/uploads/2017/09/api.png" alt="API RESTful" width="115" height="100%">
 </p>
 
 <h3 align="center">API RESTful - JAVA JPA MongoDB</h3>

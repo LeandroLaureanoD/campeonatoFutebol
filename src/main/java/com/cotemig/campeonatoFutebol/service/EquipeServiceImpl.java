@@ -38,38 +38,36 @@ public class EquipeServiceImpl implements EquipeService {
 	}
 
 	@Override
-	public List<Equipe> getAllEquipe() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void deleteAllEquipe() {
-		// TODO Auto-generated method stub
-
+		equipeRepository.deleteAll();
 	}
 
 	@Override
 	public void deleteEquipeById(Integer id) {
-		// TODO Auto-generated method stub
-
+		equipeRepository.deleteById(id);
 	}
 
 	@Override
-	public void updateEquipeById(Integer id) {
-		// TODO Auto-generated method stub
-
+	public void updateEquipe(Equipe equipe) {
+		equipeRepository.save(equipe);
 	}
 
 	@Override
 	public void updateEquipeById(Integer id, Equipe equipe) {
-		// TODO Auto-generated method stub
+		Optional<Equipe> getEquipe = getEquipeById(id);
+		getEquipe.get().setNome(equipe.getNome());
 
+		equipeRepository.save(equipe);
 	}
 
 	@Override
 	public List<Equipe> getAllEquipesByCampeonato(Integer idCampeonato) {
 		return equipeRepository.getAllEquipesByCampeonato(idCampeonato);
+	}
+
+	@Override
+	public String getNomeEquipe(Integer id) {
+		return equipeRepository.getNomeEquipe(id);
 	}
 
 }

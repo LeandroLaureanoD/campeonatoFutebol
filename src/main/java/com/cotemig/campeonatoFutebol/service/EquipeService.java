@@ -16,19 +16,20 @@ public interface EquipeService {
 
 	Optional<Equipe> getEquipeById(Integer id);
 
-	List<Equipe> getAllEquipe();
-
 	List<Equipe> getAllEquipes();
 
 	void deleteAllEquipe();
 
 	void deleteEquipeById(Integer id);
 
-	void updateEquipeById(Integer id);
-
 	void insertEquipe(Equipe equipe);
+
+	void updateEquipe(Equipe equipe);
 
 	void updateEquipeById(Integer id, Equipe equipe);
 
 	List<Equipe> getAllEquipesByCampeonato(Integer idCampeonato);
+
+	String getNomeEquipe(Integer id);
+
 }

@@ -1,0 +1,55 @@
+<html>
+ <head>
+ <title>Sistema Academico</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <style>
+ table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+ }
+ </style>
+ </head>
+ <body>
+ 
+ <a href="faculdade/insert">Inserir nova Faculdade</a> | <a href="faculdade/read">Ver todas as Faculdades</a>
+ <br> <br>
+ 
+ <table style="width:100%">
+ <tr>
+     <th>ID</td>
+     <th>Nome</td>
+     <th>CNPJ</td>
+     <th>Excluir?</td>
+     <th>Alterar?</td>
+ </tr>
+ <tr th:each="faculdade : ${faculdades}">
+     <td th:text="${faculdade.id}"></td>
+     <td th:text="${faculdade.name}"></td>
+     <td th:text="${faculdade.cnpj}"></td>
+     <td><a th:href="@{/faculdade/delete(id=${faculdade.id})}">Deletar</a></td>
+     <td><a th:href="@{/faculdade/update(id=${faculdade.id})}">Alterar</a></td>
+ </tr>
+ </table>
+
+<br> <br>
+<a href="aluno/insert">Inserir novo Aluno</a> | <a href="aluno/read">Ver todos os Alunos</a>
+<br> <br>
+
+ <table style="width:100%">
+ <tr>
+     <th>ID</td>
+     <th>Nome</td>
+     <th>E-mail</td>
+     <th>Excluir?</td>
+     <th>Alterar?</td>
+ </tr>
+ <tr th:each="aluno : ${alunos}">
+     <td th:text="${aluno.id}"></td>
+     <td th:text="${aluno.name}"></td>
+     <td th:text="${aluno.email}"></td>
+     <td><a th:href="@{/aluno/delete(id=${aluno.id})}">Deletar</a></td>
+     <td><a th:href="@{/aluno/update(id=${aluno.id})}">Alterar</a></td>
+ </tr>
+ </table>
+ </body>
+</html>
