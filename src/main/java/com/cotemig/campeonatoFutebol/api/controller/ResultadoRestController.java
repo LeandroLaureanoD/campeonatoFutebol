@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cotemig.campeonatoFutebol.controller;
+package com.cotemig.campeonatoFutebol.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,33 +13,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cotemig.campeonatoFutebol.model.Jogo;
-import com.cotemig.campeonatoFutebol.service.JogoService;
+import com.cotemig.campeonatoFutebol.model.Resultado;
+import com.cotemig.campeonatoFutebol.service.ResultadoService;
 
 /**
  * @author equipe devs
  *
  */
 @RestController
-@RequestMapping("/jogo/rest")
-public class JogoRestController {
+@RequestMapping("/resultado/rest")
+public class ResultadoRestController {
 
 	@Autowired
-	private JogoService jogoService;
+	private ResultadoService resultadoService;
 
 	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
-	public Optional<Jogo> getJogo(@PathVariable("id") Integer id) {
-		return jogoService.getJogoById(id);
+	public Optional<Resultado> getResultado(@PathVariable("id") Integer id) {
+		return resultadoService.getResultadoById(id);
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public List<Jogo> getJogos() {
-		return jogoService.getAllJogos();
+	public List<Resultado> getResultados() {
+		return resultadoService.getAllResultados();
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public void insertJogo(@RequestBody Jogo jogo) {
-		jogoService.insertJogo(jogo);
+	public void insertResultado(@RequestBody Resultado resultado) {
+		resultadoService.insertResultado(resultado);
 	}
 
 }

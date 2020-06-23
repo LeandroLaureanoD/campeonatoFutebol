@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cotemig.campeonatoFutebol.controller;
+package com.cotemig.campeonatoFutebol.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,33 +13,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cotemig.campeonatoFutebol.model.Resultado;
-import com.cotemig.campeonatoFutebol.service.ResultadoService;
+import com.cotemig.campeonatoFutebol.model.Classificacao;
+import com.cotemig.campeonatoFutebol.service.ClassificacaoService;
 
 /**
  * @author equipe devs
  *
  */
 @RestController
-@RequestMapping("/resultado/rest")
-public class ResultadoRestController {
+@RequestMapping("/classificacao/rest")
+public class ClassificacaoRestController {
 
 	@Autowired
-	private ResultadoService resultadoService;
+	private ClassificacaoService classificacaoService;
 
 	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
-	public Optional<Resultado> getResultado(@PathVariable("id") Integer id) {
-		return resultadoService.getResultadoById(id);
+	public Optional<Classificacao> getClassificacao(@PathVariable("id") Integer id) {
+		return classificacaoService.getClassificacaoById(id);
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public List<Resultado> getResultados() {
-		return resultadoService.getAllResultados();
+	public List<Classificacao> getClassificacoes() {
+		return classificacaoService.getAllClassificacoes();
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public void insertResultado(@RequestBody Resultado resultado) {
-		resultadoService.insertResultado(resultado);
+	public void insertClassificacao(@RequestBody Classificacao classificacao) {
+		classificacaoService.insertClassificacao(classificacao);
 	}
 
 }

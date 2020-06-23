@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cotemig.campeonatoFutebol.controller;
+package com.cotemig.campeonatoFutebol.api.controller;
 
 import java.util.List;
 import java.util.Optional;

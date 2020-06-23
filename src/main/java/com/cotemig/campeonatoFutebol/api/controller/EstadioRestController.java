@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cotemig.campeonatoFutebol.controller;
+package com.cotemig.campeonatoFutebol.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,43 +13,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cotemig.campeonatoFutebol.model.Cidade;
 import com.cotemig.campeonatoFutebol.model.Estadio;
-import com.cotemig.campeonatoFutebol.service.CidadeService;
+import com.cotemig.campeonatoFutebol.model.Jogo;
 import com.cotemig.campeonatoFutebol.service.EstadioService;
+import com.cotemig.campeonatoFutebol.service.JogoService;
 
 /**
  * @author equipe devs
  *
  */
 @RestController
-@RequestMapping("/cidade/rest")
-public class CidadeRestController {
+@RequestMapping("/estadio/rest")
+public class EstadioRestController {
+
+	@Autowired
+	private JogoService jogoService;
 
 	@Autowired
 	private EstadioService estadioService;
 
-	@Autowired
-	private CidadeService cidadeService;
-
 	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
-	public Optional<Cidade> getCidade(@PathVariable("id") Integer id) {
-		return cidadeService.getCidadeById(id);
+	public Optional<Estadio> getEstadio(@PathVariable("id") Integer id) {
+		return estadioService.getEstadioById(id);
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public List<Cidade> getCidades() {
-		return cidadeService.getAllCidades();
+	public List<Estadio> getEstadios() {
+		return estadioService.getAllEstadios();
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public void insertCidade(@RequestBody Cidade cidade) {
-		cidadeService.insertCidade(cidade);
+	public void insertEstadio(@RequestBody Estadio estadio) {
+		estadioService.insertEstadio(estadio);
 	}
 
-	@RequestMapping(value = "/{idCidade}/getAllEstadios", method = RequestMethod.GET)
-	public List<Estadio> getAllEstadiosByCidade(@PathVariable("idCidade") Integer idCidade) {
-		return estadioService.getAllEstadiosByCidade(idCidade);
+	@RequestMapping(value = "/{idEstadio}/getAllJogos", method = RequestMethod.GET)
+	public List<Jogo> getAllJogosByEstadio(@PathVariable("idEstadio") Integer idEstadio) {
+		return jogoService.getAllJogosByEstadio(idEstadio);
 	}
 
 }

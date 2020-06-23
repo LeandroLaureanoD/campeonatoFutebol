@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cotemig.campeonatoFutebol.controller;
+package com.cotemig.campeonatoFutebol.api.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cotemig.campeonatoFutebol.model.Estadio;
 import com.cotemig.campeonatoFutebol.model.Jogo;
-import com.cotemig.campeonatoFutebol.service.EstadioService;
 import com.cotemig.campeonatoFutebol.service.JogoService;
 
 /**
@@ -23,33 +21,25 @@ import com.cotemig.campeonatoFutebol.service.JogoService;
  *
  */
 @RestController
-@RequestMapping("/estadio/rest")
-public class EstadioRestController {
+@RequestMapping("/jogo/rest")
+public class JogoRestController {
 
 	@Autowired
 	private JogoService jogoService;
 
-	@Autowired
-	private EstadioService estadioService;
-
 	@RequestMapping(value = "/{id}/get", method = RequestMethod.GET)
-	public Optional<Estadio> getEstadio(@PathVariable("id") Integer id) {
-		return estadioService.getEstadioById(id);
+	public Optional<Jogo> getJogo(@PathVariable("id") Integer id) {
+		return jogoService.getJogoById(id);
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	public List<Estadio> getEstadios() {
-		return estadioService.getAllEstadios();
+	public List<Jogo> getJogos() {
+		return jogoService.getAllJogos();
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public void insertEstadio(@RequestBody Estadio estadio) {
-		estadioService.insertEstadio(estadio);
-	}
-
-	@RequestMapping(value = "/{idEstadio}/getAllJogos", method = RequestMethod.GET)
-	public List<Jogo> getAllJogosByEstadio(@PathVariable("idEstadio") Integer idEstadio) {
-		return jogoService.getAllJogosByEstadio(idEstadio);
+	public void insertJogo(@RequestBody Jogo jogo) {
+		jogoService.insertJogo(jogo);
 	}
 
 }
