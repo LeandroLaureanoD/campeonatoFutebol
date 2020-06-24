@@ -26,13 +26,14 @@ import com.cotemig.campeonatoFutebol.service.JogadorService;
 public class EquipeController {
 
 	@Autowired
-	EquipeService equipeService;
+	private EquipeService equipeService;
+	
 	@Autowired
-	JogadorService jogadorService;
+	private JogadorService jogadorService;
 
 	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.GET)
 	public ModelAndView inserirEquipe() {
-		return new ModelAndView("insert-equipe", "equipe", new Equipe());
+		return new ModelAndView("equipe/insert", "equipe", new Equipe());
 	}
 
 	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.POST)
@@ -43,12 +44,12 @@ public class EquipeController {
 
 		equipeService.insertEquipe(equipe);
 
-		return "redirect:";
+		return "redirect:/equipe";
 	}
 
 	@RequestMapping(value = "/equipe/delete", method = RequestMethod.GET)
 	public ModelAndView delete(Integer id) {
-		return new ModelAndView("delete", "equipe", equipeService.getEquipeById(id).get());
+		return new ModelAndView("equipe/delete", "equipe", equipeService.getEquipeById(id).get());
 	}
 
 	@RequestMapping(value = "/equipe/delete", method = RequestMethod.POST)
@@ -59,12 +60,12 @@ public class EquipeController {
 
 		equipeService.deleteEquipeById(equipe.getId());
 
-		return "redirect:";
+		return "redirect:/equipe";
 	}
 
 	@RequestMapping(value = "/equipe/update", method = RequestMethod.GET)
 	public ModelAndView update(Integer id) {
-		return new ModelAndView("update", "equipe", equipeService.getEquipeById(id).get());
+		return new ModelAndView("equipe/update", "equipe", equipeService.getEquipeById(id).get());
 	}
 
 	@RequestMapping(value = "/equipe/update", method = RequestMethod.POST)
@@ -73,15 +74,16 @@ public class EquipeController {
 			return "error";
 		}
 
-		equipeService.updateEquipeById(equipe.getId(), equipe);
+		//equipeService.updateEquipeById(equipe.getId(), equipe);
+		equipeService.updateEquipe(equipe);
 
-		return "redirect:";
+		return "redirect:/equipe";
 	}
 
 	@RequestMapping(value = "/equipe/read", method = RequestMethod.GET)
 	public ModelAndView read() {
-		ModelAndView mav = new ModelAndView("read");
-		mav.addObject("equipe", equipeService.getAllEquipes());
+		ModelAndView mav = new ModelAndView("equipe/read");
+		mav.addObject("equipes", equipeService.getAllEquipes());
 		return mav;
 	}
 

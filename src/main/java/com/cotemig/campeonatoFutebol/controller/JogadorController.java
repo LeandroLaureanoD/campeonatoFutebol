@@ -55,17 +55,17 @@ public class JogadorController {
 		if (result.hasErrors()) {
 			return "error";
 		}
-		System.out.println(jogador.getEquipe().getId());
+		
 		jogadorService.insertJogador(jogador);
 
-		return "redirect:jogador/all";
+		return "redirect:/jogador";
 	}
 	
 	// ROTA DELETE
 	@RequestMapping(value = "/jogador/delete", method = RequestMethod.GET)
 	public ModelAndView delete(Integer id) {
 
-		return new ModelAndView("delete", "jogador", jogadorService.getJogadorById(id).get());
+		return new ModelAndView("jogador/delete", "jogador", jogadorService.getJogadorById(id).get());
 	}
 
 	@RequestMapping(value = "/jogador/delete", method = RequestMethod.POST)
@@ -78,7 +78,7 @@ public class JogadorController {
 
 		jogadorService.deleteJogadorById(jogador.getId());
 
-		return "redirect:jogador/all";
+		return "redirect:/jogador";
 	}
 
 	// ROTA UPDATE
@@ -86,7 +86,7 @@ public class JogadorController {
 	@RequestMapping(value = "/jogador/update", method = RequestMethod.GET)
 	public ModelAndView update(Integer id) {
 
-		return new ModelAndView("update", "jogador", jogadorService.getJogadorById(id).get());
+		return new ModelAndView("jogador/update", "jogador", jogadorService.getJogadorById(id).get());
 	}
 
 	@RequestMapping(value = "/jogador/update", method = RequestMethod.POST)
@@ -99,14 +99,14 @@ public class JogadorController {
 
 		jogadorService.updateJogador(jogador);
 
-		return "redirect:";
+		return "redirect:/jogador";
 	}
 
 	@RequestMapping(value = "/jogador/read", method = RequestMethod.GET)
 	public ModelAndView read() {
 
-		ModelAndView mav = new ModelAndView("Jogador");
-		mav.addObject("jogador", jogadorService.getAllJogadores());
+		ModelAndView mav = new ModelAndView("jogador/read");
+		mav.addObject("jogadores", jogadorService.getAllJogadores());
 		return mav;
 	}
 
