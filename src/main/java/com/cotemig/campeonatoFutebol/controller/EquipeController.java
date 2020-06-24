@@ -30,28 +30,28 @@ public class EquipeController {
 	@Autowired
 	JogadorService jogadorService;
 
-	@RequestMapping(value = "/inserir/equipe", method = RequestMethod.GET)
+	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.GET)
 	public ModelAndView inserirEquipe() {
 		return new ModelAndView("insert-equipe", "equipe", new Equipe());
 	}
 
-	@RequestMapping(value = "/inserir/equipe", method = RequestMethod.POST)
+	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.POST)
 	public String submitInsert(@Valid @ModelAttribute("equipe") Equipe equipe, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			return "error";
 		}
-		
+
 		equipeService.insertEquipe(equipe);
 
 		return "redirect:";
 	}
 
-	@RequestMapping(value = "/delete/equipe", method = RequestMethod.GET)
+	@RequestMapping(value = "/equipe/delete", method = RequestMethod.GET)
 	public ModelAndView delete(Integer id) {
 		return new ModelAndView("delete", "equipe", equipeService.getEquipeById(id).get());
 	}
 
-	@RequestMapping(value = "/delete/equipe", method = RequestMethod.POST)
+	@RequestMapping(value = "/equipe/delete", method = RequestMethod.POST)
 	public String submitDelete(@Valid @ModelAttribute("equipe") Equipe equipe, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			return "error";
@@ -62,12 +62,12 @@ public class EquipeController {
 		return "redirect:";
 	}
 
-	@RequestMapping(value = "/update/equipe", method = RequestMethod.GET)
+	@RequestMapping(value = "/equipe/update", method = RequestMethod.GET)
 	public ModelAndView update(Integer id) {
 		return new ModelAndView("update", "equipe", equipeService.getEquipeById(id).get());
 	}
 
-	@RequestMapping(value = "/update/equipe", method = RequestMethod.POST)
+	@RequestMapping(value = "/equipe/update", method = RequestMethod.POST)
 	public String submitUpdate(@Valid @ModelAttribute("equipe") Equipe equipe, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			return "error";
@@ -78,7 +78,7 @@ public class EquipeController {
 		return "redirect:";
 	}
 
-	@RequestMapping(value = "/read/equipe", method = RequestMethod.GET)
+	@RequestMapping(value = "/equipe/read", method = RequestMethod.GET)
 	public ModelAndView read() {
 		ModelAndView mav = new ModelAndView("read");
 		mav.addObject("equipe", equipeService.getAllEquipes());
@@ -92,5 +92,5 @@ public class EquipeController {
 		mav.addObject("equipes", equipeService.getAllEquipes());
 		return mav;
 	}
-	
+
 }
