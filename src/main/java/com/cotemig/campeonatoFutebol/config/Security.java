@@ -41,6 +41,8 @@ public class Security extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/equipe");
+
 //		web.ignoring().antMatchers("/atleta/rest/getAll");
 //		web.ignoring().antMatchers("/time/rest/getAll");
 

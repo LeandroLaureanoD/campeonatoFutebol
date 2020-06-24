@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cotemig.campeonatoFutebol.model.Equipe;
 import com.cotemig.campeonatoFutebol.service.EquipeService;
+import com.cotemig.campeonatoFutebol.service.JogadorService;
 
 /**
  * @author equipe devs
@@ -26,6 +27,8 @@ public class EquipeController {
 
 	@Autowired
 	EquipeService equipeService;
+	@Autowired
+	JogadorService jogadorService;
 
 	@RequestMapping(value = "/inserir/equipe", method = RequestMethod.GET)
 	public ModelAndView inserirEquipe() {
@@ -85,8 +88,9 @@ public class EquipeController {
 	@RequestMapping(value = "/equipe", method = RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView("index");
-		mav.addObject("equipe", equipeService.getAllEquipes());
+		mav.addObject("jogadores", jogadorService.getAllJogadores());
+		mav.addObject("equipes", equipeService.getAllEquipes());
 		return mav;
 	}
-
+	
 }

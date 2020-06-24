@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+    <h1>Campeonato Futebol<h1>
     <a href="equipe/insert">Inserir novo Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
     <br> <br>
 
@@ -23,6 +23,7 @@
             <th>ID</td>
             <th>Nome</td>
             <th>...</td>
+            <th>Teste</th>
             <th>Excluir?</td>
             <th>Alterar?</td>
         </tr>
@@ -30,6 +31,7 @@
             <td th:text="${equipe.id}"></td>
             <td th:text="${equipe.name}"></td>
             <td th:text="${equipe.name}"></td>
+            <td>Teste</td>
             <td><a th:href="@{/equipe/delete(id=${equipe.id})}">Deletar</a></td>
             <td><a th:href="@{/equipe/update(id=${equipe.id})}">Alterar</a></td>
         </tr>
@@ -44,6 +46,7 @@
             <th>ID</td>
             <th>Nome</td>
             <th>...</td>
+            <th>Teste</th>
             <th>Excluir?</td>
             <th>Alterar?</td>
         </tr>
@@ -51,6 +54,7 @@
             <td th:text="${jogador.id}"></td>
             <td th:text="${jogador.name}"></td>
             <td th:text="${jogador.name}"></td>
+            <td>Teste</td>
             <td><a th:href="@{/jogador/delete(id=${jogador.id})}">Deletar</a></td>
             <td><a th:href="@{/jogador/update(id=${jogador.id})}">Alterar</a></td>
         </tr>
