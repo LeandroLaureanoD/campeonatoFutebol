@@ -33,7 +33,7 @@ public class JogadorController {
 
 	@RequestMapping(value = "/jogador/all", method = RequestMethod.GET)
 	public ModelAndView list() {
-		return new ModelAndView("Jogador", "jogador", jogadorService.getAllJogadores());
+		return new ModelAndView("jogador/Jogador", "jogadores", jogadorService.getAllJogadores());
 	}
 	
 	// ROTA INSERT JOGADOR
@@ -58,11 +58,11 @@ public class JogadorController {
 		
 		jogadorService.insertJogador(jogador);
 
-		return "redirect:/jogador";
+		return "redirect:/jogador/Jogador";
 	}
 	
 	// ROTA DELETE
-	@RequestMapping(value = "/jogador/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/jogador/{id}/delete", method = RequestMethod.GET)
 	public ModelAndView delete(Integer id) {
 
 		return new ModelAndView("jogador/delete", "jogador", jogadorService.getJogadorById(id).get());
@@ -78,7 +78,7 @@ public class JogadorController {
 
 		jogadorService.deleteJogadorById(jogador.getId());
 
-		return "redirect:/jogador";
+		return "redirect:/jogador/Jogador";
 	}
 
 	// ROTA UPDATE
@@ -86,7 +86,10 @@ public class JogadorController {
 	@RequestMapping(value = "/jogador/update", method = RequestMethod.GET)
 	public ModelAndView update(Integer id) {
 
-		return new ModelAndView("jogador/update", "jogador", jogadorService.getJogadorById(id).get());
+//		return new ModelAndView("jogador/update", "jogador", jogadorService.getJogadorById(id).get());
+		ModelAndView mav = new ModelAndView("jogador/update");
+		mav.addObject("jogador", jogadorService.getJogadorById(id).get());
+		return mav;
 	}
 
 	@RequestMapping(value = "/jogador/update", method = RequestMethod.POST)
@@ -99,7 +102,7 @@ public class JogadorController {
 
 		jogadorService.updateJogador(jogador);
 
-		return "redirect:/jogador";
+		return "redirect:/jogador/Jogador";
 	}
 
 	@RequestMapping(value = "/jogador/read", method = RequestMethod.GET)

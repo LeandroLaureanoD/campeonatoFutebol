@@ -31,12 +31,12 @@ public class EquipeController {
 	@Autowired
 	private JogadorService jogadorService;
 
-	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.GET)
+	@RequestMapping(value = "/equipe/insert", method = RequestMethod.GET)
 	public ModelAndView inserirEquipe() {
 		return new ModelAndView("equipe/insert", "equipe", new Equipe());
 	}
 
-	@RequestMapping(value = "/equipe/inserir", method = RequestMethod.POST)
+	@RequestMapping(value = "/equipe/insert", method = RequestMethod.POST)
 	public String submitInsert(@Valid @ModelAttribute("equipe") Equipe equipe, BindingResult result, ModelMap model) {
 		if (result.hasErrors()) {
 			return "error";

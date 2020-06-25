@@ -1,28 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-  <title>Deletar Jogador</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Deletar Jogador</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <style>
+    .btn {
+      margin-left: 15px;
+    }
+  </style>
 </head>
 
 <body>
-  <form action="/delete" method="POST" modelAttribute="jogador">
+  <div id="main" class="container-fluid">
+    <h3 class="page-header">Excluir Jogador</h3>
+    <form action="/jogador/{id}/delete" method="POST" modelAttribute="jogador">
+      <div class="row">
 
-    ID:<br>
-    <input type="text" name="id" th:value="${jogador.id}" readOnly="true"><br>
-    <br>
-    Nome do Jogador:<br>
-    <input type="text" name="nome" th:value="${jogador.nome}" readOnly="true"><br>
-    <br>
-    Idade do Jogador:<br>
-    <input type="text" name="idade" th:value="${jogador.idade}" readOnly="true"><br>
-    <br>
-    Nacionalidade do Jogador:<br>
-    <input type="text" name="nacionalidade" th:value="${jogador.nacionalidade}" readOnly="true"><br>
+        <div class="form-group col-md-4">
+          <label for="nome">ID:</label>
+          <input type="text" name="id" th:value="${jogador.id}" readOnly="true">
+        </div>
 
-    <br>
-    <input type="submit" value="Deletar">
-  </form>
+        <div class="form-group col-md-4">
+          <label for="nome">Nome do Jogador:</label>
+          <input type="text" name="nome" th:value="${jogador.nome}" readOnly="true">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="nome">Idade do Jogador:</label>
+          <input type="text" name="idade" th:value="${jogador.idade}" readOnly="true">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="nome">Nacionalidade do Jogador:</label>
+          <input type="text" name="nacionalidade" th:value="${jogador.nacionalidade}" readOnly="true">
+        </div>
+      </div>
+
+      <div id="actions" class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Deletar</button>
+          <a href="/jogador/all" class="btn btn-default">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
 </body>
 
 </html>
