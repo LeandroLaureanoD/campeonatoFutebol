@@ -1,29 +1,55 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-  <title>Atualizar Equipe</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atualizar Equipe</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <style>
+    .btn {
+      margin-left: 15px;
+    }
+  </style>
 </head>
 
 <body>
-  <form action="update" method="POST" modelAttribute="equipe">
+  <div id="main" class="container-fluid">
+    <h3 class="page-header">Atualizar Equipe</h3>
+    <form action="/equipe/update" method="POST" modelAttribute="equipe">
 
-    ID:<br>
-    <input type="text" name="id" th:value="${equipe.id}" readOnly="true"><br>
-    <br>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="id">ID:</label>
+          <input type="text" name="id" th:value="${equipe.id}" readOnly="true"><br>
+        </div>
 
-    Nome Equipe:<br>
-    <input type="text" name="name" th:value="${equipe.nome}"><br>
-    <br>
+        <div class="form-group col-md-4">
+          <label for="nome">Nome Equipe:</label>
+          <input type="text" name="nome" th:value="${equipe.nome}"><br>
+        </div>
 
-    Jogadores:<br>
-    <select name="jogador_id">
-      <option th:each="f : ${jogadores}" th:value="${f.id}" th:text="${f.nome}"></option>
-    </select><br>
+        <div class="form-group col-md-4">
+          <label for="jogador_id">Jogadores:</label>
+          <select name="jogador_id">
+            <option th:each="f : ${jogadores}" th:value="${f.id}" th:text="${f.nome}"></option>
+          </select>
+        </div>
+      </div>
 
-    <br>
-    <input type="submit" value="Atualizar">
-  </form>
+      <div id="actions" class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+          <a href="/equipe/all" class="btn btn-default">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

@@ -1,8 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <title>Campeonato Futebol</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Campeonato Futebol</title>
+
     <style>
         table,
         th,
@@ -15,23 +19,21 @@
 
 <body>
     <h1>Campeonato Futebol<h1>
-    <a href="equipe/insert">Inserir novo Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
+    <a href="equipe/insert">Inserir nova Equipe</a> | <a href="equipe/read">Ver todas as Equipes</a>
     <br> <br>
 
     <table style="width:100%">
         <tr>
             <th>ID</td>
             <th>Nome</td>
-            <th>...</td>
-            <th>Teste</th>
+            <th>Classificação</th>
             <th>Excluir?</td>
             <th>Alterar?</td>
         </tr>
         <tr th:each="equipe : ${equipes}">
             <td th:text="${equipe.id}"></td>
             <td th:text="${equipe.name}"></td>
-            <td th:text="${equipe.name}"></td>
-            <td>Teste</td>
+            <td th:text="${equipe.classificacao}"></td>
             <td><a th:href="@{/equipe/delete(id=${equipe.id})}">Deletar</a></td>
             <td><a th:href="@{/equipe/update(id=${equipe.id})}">Alterar</a></td>
         </tr>
@@ -45,16 +47,19 @@
         <tr>
             <th>ID</td>
             <th>Nome</td>
-            <th>...</td>
-            <th>Teste</th>
+            <th>Idade</td>
+            <th>Nacionalidade</td>
+            <th>Posição</th>
+            <th>Equipe</th>
             <th>Excluir?</td>
             <th>Alterar?</td>
         </tr>
         <tr th:each="jogador : ${jogadores}">
             <td th:text="${jogador.id}"></td>
-            <td th:text="${jogador.name}"></td>
-            <td th:text="${jogador.name}"></td>
-            <td>Teste</td>
+            <td th:text="${jogador.idade}"></td>
+            <td th:text="${jogador.nacionalidade}"></td>
+            <td th:text="${jogador.posicao}"></td>
+            <td th:text="${jogador.equipe}"></td>
             <td><a th:href="@{/jogador/delete(id=${jogador.id})}">Deletar</a></td>
             <td><a th:href="@{/jogador/update(id=${jogador.id})}">Alterar</a></td>
         </tr>

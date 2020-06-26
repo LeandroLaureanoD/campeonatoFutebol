@@ -5,9 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deletar Jogador</title>
+  <title>Excluir Jogador</title>
 
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -25,7 +25,7 @@
       <div class="row">
 
         <div class="form-group col-md-4">
-          <label for="nome">ID:</label>
+          <label for="id">ID:</label>
           <input type="text" name="id" th:value="${jogador.id}" readOnly="true">
         </div>
 
@@ -35,14 +35,14 @@
         </div>
 
         <div class="form-group col-md-4">
-          <label for="nome">Idade do Jogador:</label>
+          <label for="idade">Idade do Jogador:</label>
           <input type="text" name="idade" th:value="${jogador.idade}" readOnly="true">
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-md-12">
-          <label for="nome">Nacionalidade do Jogador:</label>
+          <label for="nacionalidade">Nacionalidade do Jogador:</label>
           <input type="text" name="nacionalidade" th:value="${jogador.nacionalidade}" readOnly="true">
         </div>
       </div>
