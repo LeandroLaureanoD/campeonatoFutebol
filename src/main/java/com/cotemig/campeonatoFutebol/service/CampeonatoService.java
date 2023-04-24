@@ -12,6 +12,7 @@ import com.cotemig.campeonatoFutebol.model.Campeonato;
  * @author equipe devs
  *
  */
+
 public interface CampeonatoService {
 
 	Optional<Campeonato> getCampeonatoById(Integer id);
